@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="uz" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="STARTUM Education Center maxfiylik siyosati: arizalar, Telegram xizmatlari va shaxsiy ma’lumotlardan foydalanish haqida."
+      data-privacy-description
+    />
+    <meta name="theme-color" content="#F2F7F3" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://startum.uz/privacy.html" />
+    <link rel="icon" href="assets/favicon.svg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <title>Maxfiylik siyosati — STARTUM</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f2f7f3;
+        --surface: rgba(255, 255, 255, 0.88);
+        --text: #123b46;
+        --muted: #526b70;
+        --line: rgba(18, 59, 70, 0.14);
+        --accent: #4ca9a1;
+        --mint: #a8f0d1;
+        --shadow: 0 22px 70px rgba(18, 59, 70, 0.09);
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0d2229;
+        --surface: #15343b;
+        --text: #f2f7f3;
+        --muted: #b5c9c7;
+        --line: rgba(168, 240, 209, 0.18);
+        --accent: #a8f0d1;
+        --mint: #4ca9a1;
+        --shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        min-height: 100%;
+        background: var(--bg);
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        font:
+          16px/1.7 Inter,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        background:
+          radial-gradient(
+            ellipse at 12% 8%,
+            rgba(168, 240, 209, 0.24),
+            transparent 34%
+          ),
+          radial-gradient(
+            ellipse at 92% 16%,
+            rgba(76, 169, 161, 0.13),
+            transparent 30%
+          ),
+          var(--bg);
+      }
+      a {
+        color: var(--accent);
+        text-underline-offset: 3px;
+      }
+      .shell {
+        width: min(880px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 22px 0;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        text-decoration: none;
+        font:
+          800 19px/1 Onest,
+          Inter,
+          sans-serif;
+        letter-spacing: -0.04em;
+      }
+      .mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: var(--mint);
+        display: grid;
+        place-items: center;
+        color: #123b46;
+        font-weight: 900;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .control {
+        min-height: 40px;
+        padding: 7px 11px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--surface);
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .control[aria-pressed="true"] {
+        border-color: var(--accent);
+        background: rgba(168, 240, 209, 0.2);
+      }
+      main {
+        padding: 26px 0 70px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 800;
+      }
+      h1,
+      h2 {
+        font-family: Onest, Inter, sans-serif;
+        line-height: 1.18;
+        letter-spacing: -0.035em;
+      }
+      h1 {
+        font-size: clamp(32px, 6vw, 50px);
+        max-width: 780px;
+        margin: 10px 0 14px;
+      }
+      h2 {
+        font-size: 21px;
+        margin: 27px 0 8px;
+      }
+      .intro {
+        color: var(--muted);
+        font-size: 17px;
+        max-width: 720px;
+      }
+      .updated {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 18px 0 26px;
+      }
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: clamp(20px, 4vw, 34px);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+      }
+      p,
+      li {
+        color: var(--muted);
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .notice {
+        border-left: 3px solid var(--accent);
+        padding: 10px 16px;
+        margin-top: 22px;
+        background: rgba(76, 169, 161, 0.08);
+        border-radius: 0 12px 12px 0;
+      }
+      .back {
+        display: inline-flex;
+        margin-top: 22px;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 750;
+      }
+      .footer {
+        padding: 0 0 34px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .lang-panel {
+        display: none;
+      }
+      .lang-panel.active {
+        display: block;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (max-width: 520px) {
+        .top {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+        .controls {
+          width: 100%;
+        }
+        .control {
+          flex: 1;
+        }
+        .panel {
+          border-radius: 17px;
+        }
+        main {
+          padding-top: 14px;
+        }
+        .intro {
+          font-size: 16px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Onest:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="top">
+        <a class="brand" href="./" aria-label="STARTUM bosh sahifasi"
+          ><span class="mark" aria-hidden="true">S</span> STARTUM</a
+        >
+        <div class="controls" role="group" aria-label="Language and appearance">
+          <button
+            class="control lang"
+            type="button"
+            data-lang="uz"
+            aria-pressed="true"
+          >
+            🇺🇿 UZ
+          </button>
+          <button
+            class="control lang"
+            type="button"
+            data-lang="ru"
+            aria-pressed="false"
+          >
+            🇷🇺 RU
+          </button>
+          <button
+            class="control lang"
+            type="button"
+            data-lang="en"
+            aria-pressed="false"
+          >
+            🇬🇧 EN
+          </button>
+          <button
+            class="control"
+            id="themeToggle"
+            type="button"
+            aria-label="Mavzuni almashtirish"
+            aria-pressed="false"
+          >
+            ◐
+          </button>
+        </div>
+      </header>
+      <main>
+        <div class="panel lang-panel active" data-panel="uz" lang="uz">
+          <div class="eyebrow">STARTUM / MA’LUMOTLAR HIMOYASI</div>
+          <h1>Maxfiylik siyosati</h1>
+          <p class="intro">
+            Ushbu sahifa STARTUM sayti va mavjud Telegram botidan foydalanishda
+            qanday ma’lumotlar qayta ishlanishini tushuntiradi.
+          </p>
+          <p class="updated">Oxirgi ko‘rib chiqilgan sana: 2026-yil 5-noyabr</p>
+          <h2>1. Qanday ma’lumotlar olinadi?</h2>
+          <p>
+            Sayt orqali ariza yuborilganda ism-familiya, telefon raqami,
+            ixtiyoriy Telegram username, tanlangan kurs, daraja, qulay vaqt va
+            foydalanuvchi yozgan xabar olinadi. Arizaga ichki identifikator
+            beriladi; uning kuzatuv tokeni bazada xesh ko‘rinishida saqlanadi.
+          </p>
+          <p>
+            Telegram botidan foydalanganda Telegram tomonidan uzatiladigan
+            Telegram ID, ism, familiya, username va tanlangan til saqlanishi
+            mumkin. Ta’lim funksiyalaridan foydalanilganda guruh a’zoligi,
+            topshiriqlar, davomat, test urinishlari va natijalar kabi o‘quv
+            jarayoniga tegishli yozuvlar qayta ishlanadi.
+          </p>
+          <h2>2. Ma’lumotlar nima maqsadda ishlatiladi?</h2>
+          <ul>
+            <li>
+              Arizani qabul qilish, ko‘rib chiqish va siz bilan bog‘lanish.
+            </li>
+            <li>Kurs, ustoz, guruh va dars jarayonini boshqarish.</li>
+            <li>
+              Topshiriq, davomat, test natijasi va o‘quv bildirishnomalarini
+              yuritish.
+            </li>
+            <li>
+              Xavfsizlik, dublikat arizalar va so‘rovlar tezligini nazorat
+              qilish.
+            </li>
+          </ul>
+          <h2>3. Kimlar ma’lumotga kira oladi?</h2>
+          <p>
+            Ariza va o‘quv yozuvlariga faqat tegishli vazifa uchun vakolat
+            berilgan STARTUM administratorlari hamda tayinlangan ustozlar
+            kirishi kerak. O‘quvchilar boshqa o‘quvchilarning shaxsiy natijalari
+            yoki yopiq guruh ma’lumotlarini ko‘rmasligi uchun server tomonida
+            ruxsat tekshiruvlari qo‘llanadi.
+          </p>
+          <p>
+            Ariza xabarnomalari sozlangan administratorlarga mavjud Telegram
+            integratsiyasi orqali yuborilishi mumkin. Telegram xizmatidan
+            foydalanganda ma’lumotlar Telegram’ning o‘z maxfiylik va xizmat
+            shartlariga ham bo‘ysunadi.
+          </p>
+          <h2>4. Saqlash va texnik himoya</h2>
+          <p>
+            Ma’lumotlar STARTUM serveridagi SQLite bazasida saqlanadi.
+            Administrator parollari ochiq matnda emas, PBKDF2-SHA256 xesh
+            shaklida saqlanadi. Administrator sessiya cookie’i HttpOnly va
+            SameSite=Strict atributlaridan foydalanadi; HTTPS production
+            sozlamasida Secure ham yoqilishi shart.
+          </p>
+          <p>
+            Ariza va admin login so‘rovlarini tezlik bo‘yicha cheklash uchun IP
+            manzilning kalit bilan xeshlangan izi ishlatiladi; xom IP ushbu
+            rate-limit jadvaliga yozilmaydi. Administrator sessiya/audit
+            yozuvlarida xavfsizlik uchun admin so‘rovi IP manzili ham saqlanishi
+            mumkin; rate-limit jadvalida esa xom IP emas, xeshlangan iz
+            ishlatiladi. Ta’lim tizimidagi muhim amallar ham audit jurnalida
+            qayd qilinishi mumkin.
+          </p>
+          <h2>5. Brauzer xotirasi va offline rejim</h2>
+          <p>
+            Sayt tanlangan til va Light/Dark mavzuni brauzerning localStorage
+            xotirasida saqlaydi. PWA service worker faqat ommaviy sahifa va
+            tasdiqlangan statik resurslarni keshga oladi. API javoblari, admin
+            sahifalari, autentifikatsiya, shaxsiy o‘quvchi ma’lumotlari va
+            foydalanuvchi yuklagan fayllar offline keshga kiritilmaydi.
+          </p>
+          <h2>6. Uchinchi tomon xizmatlari</h2>
+          <p>
+            Sayt shriftlarni Google Fonts’dan yuklashi mumkin. Telegram
+            havolalari Telegram xizmatiga olib boradi. Xarita havolasi yoki
+            xarita ko‘rinishi Google Maps’dan foydalanadi. Ushbu xizmatlarga
+            o‘tganingizda ularning maxfiylik qoidalari amal qiladi.
+          </p>
+          <h2>7. Saqlash muddati va so‘rovlar</h2>
+          <p>
+            Tugallanmagan Telegram bot suhbatlarining vaqtinchalik FSM holati
+            SQLite’da saqlanadi va 7 kundan keyin avtomatik tozalanadi.
+            Arizalar, ta’lim tarixi, audit va boshqa ma’lumot kategoriyalari
+            uchun yagona avtomatik saqlash muddati belgilanmagan. Ma’lumotni
+            tuzatish yoki o‘chirish bo‘yicha so‘rov yuborish uchun STARTUM’ning
+            rasmiy aloqa ma’lumotlari yoki Telegram kanali orqali murojaat
+            qiling. So‘rov xavfsizlik va qonuniy majburiyatlar hisobga olinib
+            ko‘rib chiqiladi; avtomatik o‘chirish funksiyasi mavjud deb va’da
+            berilmaydi.
+          </p>
+          <div class="notice">
+            <strong>Eslatma:</strong> bu sahifa amaldagi texnik xatti-harakatlar
+            haqida ma’lumot beradi. Rasmiy huquqiy siyosat va ma’lumotlarni
+            saqlash muddatlari markaz mas’ullari tomonidan alohida tasdiqlanishi
+            kerak.
+          </div>
+          <a class="back" href="./">← Bosh sahifaga qaytish</a>
+        </div>
+        <div class="panel lang-panel" data-panel="ru" lang="ru">
+          <div class="eyebrow">STARTUM / ЗАЩИТА ДАННЫХ</div>
+          <h1>Политика конфиденциальности</h1>
+          <p class="intro">
+            На этой странице объясняется, какие данные обрабатываются при
+            использовании сайта STARTUM и существующего Telegram-бота.
+          </p>
+          <p class="updated">Последняя проверка: 5 ноября 2026 года</p>
+          <h2>1. Какие данные собираются?</h2>
+          <p>
+            При отправке заявки через сайт запрашиваются имя и фамилия, номер
+            телефона, необязательный Telegram username, выбранный курс, уровень,
+            удобное время и сообщение пользователя. Заявке присваивается
+            внутренний идентификатор; токен отслеживания хранится в базе в виде
+            хеша.
+          </p>
+          <p>
+            При использовании Telegram-бота могут сохраняться переданные
+            Telegram ID, имя, фамилия, username и выбранный язык. Для
+            образовательных функций могут обрабатываться сведения о членстве в
+            группах, заданиях, посещаемости, попытках тестов и результатах
+            обучения.
+          </p>
+          <h2>2. Для чего используются данные?</h2>
+          <ul>
+            <li>Приём и рассмотрение заявки, связь с вами.</li>
+            <li>
+              Управление курсами, преподавателями, группами и учебным процессом.
+            </li>
+            <li>
+              Учёт заданий, посещаемости, результатов тестов и учебных
+              уведомлений.
+            </li>
+            <li>
+              Защита системы, предотвращение дубликатов и ограничение частоты
+              запросов.
+            </li>
+          </ul>
+          <h2>3. Кто имеет доступ?</h2>
+          <p>
+            Доступ к заявкам и учебным записям должен предоставляться только
+            администраторам STARTUM и назначенным преподавателям в рамках их
+            полномочий. Серверные проверки доступа ограничивают просмотр чужих
+            результатов и закрытых групповых данных.
+          </p>
+          <p>
+            Уведомления о заявках могут отправляться настроенным администраторам
+            через существующую интеграцию с Telegram. При использовании Telegram
+            также действуют правила конфиденциальности и условия самого сервиса.
+          </p>
+          <h2>4. Хранение и техническая защита</h2>
+          <p>
+            Данные хранятся в базе SQLite на сервере STARTUM. Пароли
+            администраторов хранятся не в открытом виде, а в формате хеша
+            PBKDF2-SHA256. Cookie сессии администратора использует HttpOnly и
+            SameSite=Strict; в production по HTTPS также должен быть включён
+            Secure.
+          </p>
+          <p>
+            Для ограничения частоты заявок и входов используется хешированный с
+            ключом отпечаток IP-адреса; исходный IP не записывается в таблицу
+            rate-limit. В записях администраторских сессий и аудита для
+            безопасности может сохраняться IP-адрес административного запроса; в
+            таблице rate-limit хранится хешированный отпечаток, а не исходный
+            IP. Важные действия образовательной системы также могут
+            фиксироваться в журнале аудита.
+          </p>
+          <h2>5. Хранилище браузера и офлайн-режим</h2>
+          <p>
+            Выбранный язык и тема Light/Dark сохраняются в localStorage
+            браузера. Service worker кэширует только публичную страницу и
+            разрешённые статические ресурсы. Ответы API, страницы
+            администратора, аутентификация, личные данные учащихся и загруженные
+            пользователями файлы не помещаются в офлайн-кэш.
+          </p>
+          <h2>6. Сторонние сервисы</h2>
+          <p>
+            Сайт может загружать шрифты из Google Fonts. Ссылки Telegram ведут в
+            Telegram, а карта использует Google Maps. При переходе к этим
+            сервисам применяются их собственные правила конфиденциальности.
+          </p>
+          <h2>7. Срок хранения и запросы</h2>
+          <p>
+            Временное состояние незавершённых диалогов Telegram-бота хранится в
+            SQLite и автоматически удаляется через 7 дней. Для заявок, учебной
+            истории, аудита и других категорий единого автоматического срока
+            хранения не установлено. Для запроса на исправление или удаление
+            данных обратитесь по официальным контактам STARTUM или через
+            официальный Telegram-канал. Запрос рассматривается с учётом
+            безопасности и юридических обязательств; автоматическое удаление не
+            гарантируется.
+          </p>
+          <div class="notice">
+            <strong>Примечание:</strong> страница описывает текущее техническое
+            поведение. Официальная юридическая политика и сроки хранения данных
+            должны быть отдельно утверждены ответственными лицами центра.
+          </div>
+          <a class="back" href="./">← Вернуться на главную</a>
+        </div>
+        <div class="panel lang-panel" data-panel="en" lang="en">
+          <div class="eyebrow">STARTUM / DATA PROTECTION</div>
+          <h1>Privacy policy</h1>
+          <p class="intro">
+            This page explains what information is processed when using the
+            STARTUM website and its existing Telegram bot.
+          </p>
+          <p class="updated">Last reviewed: 5 November 2026</p>
+          <h2>1. What information is collected?</h2>
+          <p>
+            When you submit a website application, the form collects your name,
+            phone number, optional Telegram username, selected course, level,
+            preferred time and message. An internal application identifier is
+            assigned; the tracking token is stored in the database as a hash.
+          </p>
+          <p>
+            When using the Telegram bot, the Telegram ID, first and last name,
+            username and selected language supplied by Telegram may be stored.
+            Education features may process group membership, assignments,
+            attendance, test attempts and learning results.
+          </p>
+          <h2>2. How is information used?</h2>
+          <ul>
+            <li>To receive and review applications and contact you.</li>
+            <li>
+              To manage courses, teachers, groups and learning activities.
+            </li>
+            <li>
+              To record assignments, attendance, test results and learning
+              notifications.
+            </li>
+            <li>
+              To protect the service, prevent duplicate applications and limit
+              request rates.
+            </li>
+          </ul>
+          <h2>3. Who can access the information?</h2>
+          <p>
+            Application and education records should only be accessible to
+            STARTUM administrators and assigned teachers within their
+            permissions. Server-side authorization checks restrict access to
+            other students’ results and closed group data.
+          </p>
+          <p>
+            Application notifications may be sent to configured administrators
+            through the existing Telegram integration. When using Telegram, that
+            service’s own privacy rules and terms also apply.
+          </p>
+          <h2>4. Storage and technical safeguards</h2>
+          <p>
+            Information is stored in the STARTUM server’s SQLite database.
+            Administrator passwords are stored as PBKDF2-SHA256 hashes, not
+            plaintext. The administrator session cookie uses HttpOnly and
+            SameSite=Strict; Secure must also be enabled in HTTPS production
+            deployments.
+          </p>
+          <p>
+            A keyed hash of the IP address is used to rate-limit application and
+            login requests; the raw IP is not written to the rate-limit table.
+            Administrator session and audit records may retain the administrator
+            request IP address for security; the rate-limit table stores a
+            hashed fingerprint rather than the raw IP. Important education
+            actions may also be recorded in audit logs.
+          </p>
+          <h2>5. Browser storage and offline mode</h2>
+          <p>
+            Your selected language and Light/Dark theme are stored in browser
+            localStorage. The service worker caches only the public page and
+            approved static assets. API responses, admin pages, authentication,
+            private student information and user-uploaded files are excluded
+            from the offline cache.
+          </p>
+          <h2>6. Third-party services</h2>
+          <p>
+            The site may load fonts from Google Fonts. Telegram links open
+            Telegram, and the map uses Google Maps. Those providers’ own privacy
+            policies apply when you use their services.
+          </p>
+          <h2>7. Retention and requests</h2>
+          <p>
+            Temporary state for unfinished Telegram bot conversations is stored
+            in SQLite and automatically removed after 7 days. Applications,
+            education history, audit entries and other data categories do not
+            have one universal automatic retention period. To request correction
+            or deletion, contact STARTUM using the official contact information
+            or official Telegram channel. Requests are reviewed with security
+            and legal obligations in mind; automatic deletion is not promised.
+          </p>
+          <div class="notice">
+            <strong>Note:</strong> this page describes the current technical
+            behavior. The center’s responsible representatives should separately
+            approve the formal legal policy and data-retention periods.
+          </div>
+          <a class="back" href="./">← Back to homepage</a>
+        </div>
+      </main>
+      <footer class="footer">© 2026 STARTUM Education Center</footer>
+    </div>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const valid = ["uz", "ru", "en"];
+        let language = "uz";
+        let theme = "light";
+        try {
+          const storedLanguage = localStorage.getItem("startumLang");
+          const storedTheme = localStorage.getItem("startumTheme");
+          if (valid.includes(storedLanguage)) language = storedLanguage;
+          if (storedTheme === "dark") theme = "dark";
+        } catch (_) {}
+        function render() {
+          root.lang = language;
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+          document
+            .querySelectorAll("[data-panel]")
+            .forEach((panel) =>
+              panel.classList.toggle(
+                "active",
+                panel.dataset.panel === language,
+              ),
+            );
+          document
+            .querySelectorAll("[data-lang]")
+            .forEach((button) =>
+              button.setAttribute(
+                "aria-pressed",
+                String(button.dataset.lang === language),
+              ),
+            );
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.content = theme === "dark" ? "#123B46" : "#F2F7F3";
+          const titles = {
+            uz: "Maxfiylik siyosati — STARTUM",
+            ru: "Политика конфиденциальности — STARTUM",
+            en: "Privacy policy — STARTUM",
+          };
+          const labels = {
+            uz: ["Til va ko‘rinish", "Mavzuni almashtirish"],
+            ru: ["Язык и оформление", "Сменить тему"],
+            en: ["Language and appearance", "Toggle theme"],
+          };
+          document
+            .querySelector(".controls")
+            ?.setAttribute("aria-label", labels[language][0]);
+          document
+            .getElementById("themeToggle")
+            ?.setAttribute("aria-label", labels[language][1]);
+          document
+            .getElementById("themeToggle")
+            ?.setAttribute("aria-pressed", String(theme === "dark"));
+          document.title = titles[language];
+        }
+        document.querySelectorAll("[data-lang]").forEach((button) =>
+          button.addEventListener("click", () => {
+            language = button.dataset.lang;
+            try {
+              localStorage.setItem("startumLang", language);
+            } catch (_) {}
+            render();
+          }),
+        );
+        document
+          .getElementById("themeToggle")
+          ?.addEventListener("click", () => {
+            theme = theme === "light" ? "dark" : "light";
+            try {
+              localStorage.setItem("startumTheme", theme);
+            } catch (_) {}
+            render();
+          });
+        render();
+      })();
+    </script>
+  </body>
+</html>

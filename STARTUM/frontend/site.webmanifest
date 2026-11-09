@@ -1,0 +1,34 @@
+{
+  "name": "STARTUM Education Center",
+  "short_name": "STARTUM",
+  "lang": "uz",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f7f3",
+  "theme_color": "#123b46",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "scope": "./",
+  "description": "STARTUM Education Center — One Center. Multiple Directions.",
+  "categories": [
+    "education"
+  ]
+}

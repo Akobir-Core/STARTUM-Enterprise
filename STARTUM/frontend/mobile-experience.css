@@ -1,0 +1,150 @@
+/* STARTUM dedicated mobile composition layer. Loaded after the shared desktop system. */
+:root {
+  --st-mobile-gutter: clamp(12px, 4vw, 20px);
+  --st-mobile-radius: 18px;
+  --st-mobile-control: 48px;
+}
+
+@media (max-width: 640px) {
+  html { scroll-padding-top: 84px; }
+  body { overflow-x: clip; }
+  .shell { width: calc(100% - 2 * var(--st-mobile-gutter)); }
+
+  /* Header: compact actions, predictable touch targets and a bounded menu. */
+  .premium-topbar {
+    min-height: 62px;
+    padding-top: max(7px, env(safe-area-inset-top));
+  }
+  .premium-topbar .top-actions { flex: 0 0 auto; gap: 6px; }
+  .premium-topbar .premium-menu-btn,
+  .premium-topbar .premium-theme-toggle,
+  .premium-topbar .premium-language-picker {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .premium-topbar .main-nav.mobile-open {
+    max-height: min(72svh, 540px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px;
+  }
+  .premium-topbar .main-nav.mobile-open a { min-height: 46px; }
+
+  /* Recompose content vertically; avoid squeezing desktop columns. */
+  .hero .hero-grid,
+  .special-shell,
+  .location-layout,
+  .faq-layout,
+  .contact-grid { min-width: 0; }
+  .section { padding-block: clamp(44px, 12vw, 58px); }
+  .section-head { min-width: 0; }
+  .section-head h2,
+  .faq-layout h2,
+  .contact-copy h2,
+  .navigator-head h2 { overflow-wrap: anywhere; }
+
+  .discovery-bar { min-width: 0; }
+  .search-box,
+  .search-box input,
+  .global-search-toolbar,
+  .search-main-control { min-width: 0; max-width: 100%; }
+  .filter-row { max-width: 100%; }
+  .filter { min-height: 44px; }
+
+  .subject-card,
+  .special-card,
+  .teacher-card,
+  .result-card,
+  .location-card { min-width: 0; }
+  .subject-card h3,
+  .special-card strong,
+  .teacher-meta h3 { overflow-wrap: anywhere; }
+  .teacher-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .lead-form { min-width: 0; padding: clamp(14px, 4vw, 19px); }
+  .lead-form input:not([type="hidden"], [type="submit"]),
+  .lead-form textarea,
+  .lead-form select,
+  .lead-form .select-btn { min-height: var(--st-mobile-control); font-size: 16px; }
+  .lead-form .btn,
+  .hero .hero-actions .btn,
+  .loc-actions .btn { min-height: var(--st-mobile-control); }
+
+  /* Footer: four clear content groups, then a concise legal row. */
+  .footer {
+    padding: 30px 0 max(26px, env(safe-area-inset-bottom));
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .footer-grid > div { min-width: 0; padding: 18px 0; }
+  .footer-grid > div:first-child {
+    padding-top: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-grid > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 14px;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-grid > div:nth-child(2) h4 { grid-column: 1 / -1; margin-bottom: 6px; }
+  .footer-grid > div:nth-child(2) a {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    min-width: 0;
+    margin: 0;
+    padding: 7px 0;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .footer-grid > div.footer-social {
+    padding-block: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-social-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    gap: 9px;
+  }
+  .footer .footer-grid > div.footer-social .footer-social-links > a.footer-social-link {
+    min-height: 48px;
+    padding: 9px 10px;
+    gap: 8px;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+  .footer-social-icon { width: 18px; height: 18px; flex-basis: 18px; }
+  .footer-grid > div:last-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+    padding-bottom: 0;
+  }
+  .footer-grid > div:last-child h4 { margin-bottom: 2px; }
+  .footer-grid > div:last-child a { display: inline-flex; align-items: center; min-height: 42px; margin: 0; }
+  .footer-grid > div:last-child p { max-width: none; margin: 0; line-height: 1.55; }
+
+  /* Preserve readability where wide data is genuinely tabular. */
+  .table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+  .day-tabs { scrollbar-width: thin; }
+}
+
+@media (max-width: 380px) {
+  :root { --st-mobile-gutter: 12px; }
+  .footer-social-links { grid-template-columns: minmax(0, 1fr); }
+  .premium-topbar .brand-word small { display: none; }
+  .subject-card, .special-card { padding: 12px; }
+  .subject-card h3 { font-size: 14px; }
+  .special-card strong { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-topbar .main-nav { animation: none !important; transition: none !important; }
+}

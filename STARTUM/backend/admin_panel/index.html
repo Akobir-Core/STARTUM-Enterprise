@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="STARTUM boshqaruv paneli">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>STARTUM · Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/assets/admin.css">
+  <script defer src="/admin/assets/admin.js"></script>
+</head>
+<body>
+  <div class="app-shell is-logged-out" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="STARTUM boshqaruv navigatsiyasi">
+      <a class="brand" href="/admin/" aria-label="STARTUM boshqaruv paneli">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+        <span><strong>STARTUM</strong><small>ADMIN CENTER</small></span>
+      </a>
+      <nav class="nav" aria-label="Admin bo‘limlari">
+        <div class="nav-group" data-nav-group>
+          <span class="nav-group-label">Umumiy</span>
+          <button class="nav-item active" type="button" data-view="overview"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span> Umumiy</button>
+        </div>
+        <div class="nav-group" data-nav-group>
+          <span class="nav-group-label">QABUL VA ALOQA</span>
+          <button class="nav-item" type="button" data-view="applications"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z"/><path d="M14 3.5V8h4M9 12h6M9 16h6"/></svg></span> Arizalar</button>
+          <button class="nav-item" type="button" data-view="messages"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.7A2.5 2.5 0 0 1 4 13.5Z"/><path d="M8 8h8M8 11.5h5"/></svg></span> Murojaatlar</button>
+        </div>
+        <div class="nav-group" data-nav-group>
+          <span class="nav-group-label">TA’LIM JARAYONI</span>
+          <button class="nav-item" type="button" data-view="users" data-role-allow="ceo,senior_admin,junior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A5.5 5.5 0 0 1 8 13h2a5.5 5.5 0 0 1 5.5 5.5V20M17 8h5m-2.5-2.5v5"/></svg></span> Foydalanuvchilar</button>
+          <button class="nav-item" type="button" data-view="catalog"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></svg></span> Kurslar va ustozlar</button>
+          <button class="nav-item" type="button" data-view="groups" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20v-1.5A5.5 5.5 0 0 1 8 13h1a5.5 5.5 0 0 1 5.5 5.5V20m1.5-6.5a4.5 4.5 0 0 1 6 4.2V20"/></svg></span> Guruhlar</button>
+          <button class="nav-item" type="button" data-view="resources"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7.5 12 4l8 3.5-8 3.5-8-3.5Z"/><path d="M4 7.5v9L12 20l8-3.5v-9M12 11v9"/><path d="M7 6.2 15 9.7"/></svg></span> O‘quv materiallari</button>
+          <button class="nav-item" type="button" data-view="quiz-results" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17"/><path d="M8 16v-5M12 16V8M16 16v-8M20 16V4"/></svg></span> Test natijalari</button>
+          <button class="nav-item" type="button" data-view="calendar" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 4h3m-3 3h6"/></svg></span> Akademik kalendar</button>
+        </div>
+        <div class="nav-group" data-nav-group>
+          <span class="nav-group-label">TIZIM BOSHQARUVI</span>
+          <button class="nav-item" type="button" data-view="notifications" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span> Telegram xabarlari</button>
+          <button class="nav-item" type="button" data-view="audit" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span> Amallar tarixi</button>
+          <button class="nav-item" type="button" data-view="exports" data-role-allow="ceo,senior_admin"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3"/></svg></span> Hisobot eksporti</button>
+          <button class="nav-item" type="button" data-view="accounts" data-role-allow="ceo"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5A5.5 5.5 0 0 1 8 13h2a5.5 5.5 0 0 1 5.5 5.5V20M16 4.8a3.5 3.5 0 0 1 0 6.5M17 14a4.5 4.5 0 0 1 4.5 4.5V20"/></svg></span> Administratorlar</button>
+        </div>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span><span>STARTUM backend</span>
+        <button class="logout-button" id="logoutButton" type="button" hidden>Chiqish</button>
+      </div>
+    </aside>
+    <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Menyuni yopish" hidden></button>
+
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow">STARTUM / CONTROL CENTER</p><h1 id="pageTitle">Umumiy ko‘rinish</h1></div>
+        <div class="topbar-right"><span class="connection" id="connectionState">Ulanish tekshirilmoqda</span><button class="admin-theme-toggle" id="adminThemeToggle" type="button" aria-label="Rang rejimini almashtirish" title="Rang rejimini almashtirish"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button><button class="mobile-menu" id="mobileMenu" type="button" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="sidebar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+      </header>
+
+      <section class="login-stage" id="loginStage" hidden>
+        <div class="login-card">
+          <div class="login-symbol">S</div>
+          <p class="eyebrow">HIMOYALANGAN KIRISH</p>
+          <h2>Admin panelga kirish</h2>
+          <p class="muted">Davom etish uchun administrator ma’lumotlarini kiriting.</p>
+          <form id="loginForm">
+            <label>Login<input name="username" autocomplete="username" required maxlength="80"></label>
+            <label for="adminPasswordInput">Parol
+              <span class="password-field">
+                <input id="adminPasswordInput" name="password" type="password" autocomplete="current-password" required maxlength="256">
+                <button class="password-visibility" id="toggleAdminPassword" type="button" aria-label="Parolni ko‘rsatish" aria-controls="adminPasswordInput" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                </button>
+              </span>
+            </label>
+            <p class="form-message" id="loginMessage" role="status" aria-live="polite"></p>
+            <button class="button primary full" id="loginSubmit" type="submit">Xavfsiz kirish <span>→</span></button>
+          </form>
+          <details class="login-recovery">
+            <summary>Parolni unutdingizmi?</summary>
+            <div class="login-recovery-content">
+              <p><strong>Asosiy CEO hisobi:</strong> tiklash usuli — serverdagi <code>backend/.env</code> faylida <code>WEB_ADMIN_PASSWORD_HASH</code> qiymatini yangilash. Xom parolni faylga yozmang.</p>
+              <p><strong>Boshqa administratorlar:</strong> Asosiy CEO boshqa administrator uchun yangi parolni Admin Panel → Administratorlar → Administrator parolini tiklash bo‘limidan belgilaydi.</p>
+              <p class="muted">Email orqali tiklash xizmati sozlanmagan. Bu yerda soxta tiklash xabari yuborilmaydi.</p>
+            </div>
+          </details>
+          <p class="login-foot">Kirish ma’lumotlari serverning <code>.env</code> faylida sozlanadi.</p>
+        </div>
+      </section>
+
+      <section id="workspace" hidden>
+        <div class="welcome-row"><div><p class="muted" id="welcomeMessage">Boshqaruv ma’lumotlari</p></div><button class="button subtle" id="refreshButton" type="button"><svg class="refresh-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9a7 7 0 0 1 11.8-2L20 12M4 12l2.6 5a7 7 0 0 0 11.8-2"/></svg> Yangilash</button></div>
+        <div class="stats-grid" id="statsGrid" aria-live="polite"></div>
+        <section class="panel diagnostics-panel" aria-labelledby="diagnosticsTitle">
+          <div class="panel-heading"><div><p class="eyebrow">TIZIM HOLATI</p><h2 id="diagnosticsTitle">Xizmatlar va ma’lumotlar bazasi</h2><p class="muted" id="diagnosticsSummary" role="status" aria-live="polite">Tekshirilmagan</p></div><button class="button subtle" id="refreshDiagnostics" type="button">↻ Tekshirish</button></div>
+          <div class="diagnostics-grid" id="diagnosticsGrid"></div>
+        </section>
+
+        <section class="panel password-panel" id="selfPasswordPanel">
+          <div class="panel-heading"><div><p class="eyebrow">HISOB XAVFSIZLIGI</p><h2>Parol boshqaruvi</h2><p class="muted">Har bir administrator faqat o‘z parolini boshqaradi. Parollar serverda xeshlangan ko‘rinishda saqlanadi.</p></div></div>
+          <form id="selfPasswordForm" class="create-form">
+            <label>Joriy parol<input name="current_password" type="password" autocomplete="current-password" minlength="1" maxlength="256" required></label>
+            <label>Yangi parol<input name="new_password" type="password" autocomplete="new-password" minlength="12" maxlength="256" required><small>Kamida 12 belgi, kamida bitta harf va bitta raqam.</small></label>
+            <label>Yangi parolni takrorlang<input name="confirm_password" type="password" autocomplete="new-password" minlength="12" maxlength="256" required></label>
+            <button class="button primary" type="submit">Parolni almashtirish</button>
+            <p class="form-message" id="selfPasswordMessage" role="status" aria-live="polite"></p>
+          </form>
+          <p class="muted small-note" id="ceoPasswordNote" hidden>Asosiy CEO paroli <code>backend/.env</code> ichidagi <code>WEB_ADMIN_PASSWORD_HASH</code> orqali boshqariladi. Xom parolni konfiguratsiyaga yozmang; loyihaning README ko‘rsatmasiga muvofiq hash qiymatini yarating. Uni o‘zgartirgach, backendni qayta ishga tushiring.</p>
+        </section>
+
+        <section class="panel view-panel" data-panel="overview">
+          <div class="panel-heading"><div><p class="eyebrow">ISH JARAYONI</p><h2>So‘nggi arizalar</h2></div><button class="text-button" type="button" data-goto="applications">Barchasini ko‘rish →</button></div>
+          <div id="recentApplications" class="table-wrap"></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="applications" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">QABUL VA MUROJAATLAR</p><h2>Arizalarni boshqarish</h2></div>
+            <div class="filters">
+              <label class="filter-label">Manba<select id="sourceFilter"><option value="website">Sayt</option><option value="bot">Telegram bot</option></select></label>
+              <label class="filter-label">Holat<select id="statusFilter"><option value="">Barchasi</option><option value="new">Yangi</option><option value="in_review">Ko‘rib chiqilmoqda</option><option value="contacted">Bog‘lanildi</option><option value="accepted">Qabul qilindi</option><option value="rejected">Rad etildi</option><option value="closed">Yopildi (eski holat)</option></select></label>
+              <label class="filter-label search-filter">Qidirish<input id="applicationSearch" type="search" maxlength="120" placeholder="Ism, telefon, kurs…"></label>
+              <button class="button" id="searchApplications" type="button">Qidirish</button>
+              <button class="button primary" id="exportApplications" type="button" data-role-allow="ceo,senior_admin" aria-label="Filtrlangan arizalarni CSV formatida eksport qilish">CSV eksport ↓</button>
+            </div>
+          </div>
+          <div id="applicationsTable" class="table-wrap"></div>
+          <div class="pagination" id="applicationPagination" hidden>
+            <span id="paginationSummary" aria-live="polite"></span>
+            <div><button class="button subtle" id="previousPage" type="button">← Oldingi</button><button class="button subtle" id="nextPage" type="button">Keyingi →</button></div>
+          </div>
+        </section>
+
+        <section class="panel view-panel" data-panel="users" data-role-allow="ceo,senior_admin,junior_admin" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">HISOBLAR VA RUXSATLAR</p><h2>Foydalanuvchilar</h2><p class="muted">Telegram ID, ichki ID, ism yoki username bo‘yicha qidiring. Cheklov faqat STARTUM botidagi kirishga ta’sir qiladi.</p></div><button class="button subtle" id="refreshUsers" type="button">↻ Yangilash</button></div>
+          <form id="userSearchForm" class="resource-filter-row user-search-row">
+            <label class="filter-label search-filter">Foydalanuvchi qidirish<input id="userSearch" type="search" maxlength="120" placeholder="Telegram ID, ichki ID, ism yoki username…"></label>
+            <button class="button primary" type="submit">Qidirish</button>
+            <span class="muted" id="userSummary" aria-live="polite"></span>
+          </form>
+          <div id="usersTable" class="table-wrap" aria-live="polite"></div>
+          <div class="pagination" id="userPagination" hidden><span id="userPaginationSummary" aria-live="polite"></span><div><button class="button subtle" id="previousUsersPage" type="button">← Oldingi</button><button class="button subtle" id="nextUsersPage" type="button">Keyingi →</button></div></div>
+          <section id="userDetail" class="user-detail" aria-live="polite" hidden>
+            <div class="panel-heading"><div><p class="eyebrow">FOYDALANUVCHI KARTASI</p><h3 id="userDetailTitle">Foydalanuvchi</h3></div><button class="text-button" id="closeUserDetail" type="button">Yopish ×</button></div>
+            <div id="userDetailBody"></div>
+            <form id="userModerationForm" class="create-form user-moderation-form" data-write-roles="ceo,senior_admin">
+              <h4>STARTUM botiga kirish</h4>
+              <label>Holat<select name="status" id="userStatus"><option value="active">Faol / tiklash</option><option value="suspended">Vaqtincha cheklash</option></select></label>
+              <label>Muddat (daqiqa)<input name="duration_minutes" id="userDuration" type="number" min="1" max="525600" step="1" inputmode="numeric" placeholder="Bo‘sh qoldirilsa, muddat cheklanmaydi"></label>
+              <label class="wide">Sabab (ixtiyoriy)<textarea name="reason" id="userReason" maxlength="500" rows="2"></textarea></label>
+              <p class="muted small-note wide">Telegram shaxsiy bot foydalanuvchisini global mute qila olmaydi. Guruh cheklovi alohida amal bo‘lib, botda admin huquqi talab qiladi.</p>
+              <button class="button primary" type="submit">Holatni saqlash</button><p class="form-message" id="userModerationMessage" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </section>
+
+        <section class="panel view-panel" data-panel="messages" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">FOYDALANUVCHI ALOQASI</p><h2>Murojaatlar</h2><p class="muted">Telegram bot orqali yuborilgan savol, taklif va muammolar. Javob yuborish mavjud Telegram Admin jarayonida bajariladi.</p></div><button class="button subtle" id="refreshMessages" type="button">↻ Yangilash</button></div>
+          <div class="resource-filter-row"><label class="filter-label">Holat<select id="messageStatusFilter"><option value="">Barcha holatlar</option><option value="new">Yangi</option><option value="answered">Javob berilgan</option></select></label><label class="filter-label search-filter">Qidirish<input id="messageSearch" type="search" maxlength="120" placeholder="Mavzu, matn, foydalanuvchi yoki Telegram ID…"></label><button class="button" id="searchMessages" type="button">Qidirish</button><span class="muted" id="messageSummary" aria-live="polite"></span></div>
+          <div id="messagesTable" class="table-wrap" aria-live="polite"></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="catalog" hidden>
+          <div class="panel-heading"><div><p class="eyebrow">KONTENT</p><h2>Kurslar va ustozlar</h2></div></div>
+          <div class="catalog-grid"><section><h3>Kurslar</h3><div id="coursesTable" class="table-wrap"></div></section><section><h3>Ustozlar</h3><div id="teachersTable" class="table-wrap"></div></section></div>
+          <div class="create-grid" data-write-roles="ceo,senior_admin">
+            <details class="create-box"><summary>＋ Yangi kurs qo‘shish</summary>
+              <form id="courseForm" class="create-form">
+                <label>Turi<select name="kind"><option value="subject">Asosiy fan</option><option value="special">Maxsus dastur</option></select></label>
+                <label>O‘zbekcha nom<input name="name_uz" minlength="2" maxlength="120" required></label>
+                <label>Ruscha nom<input name="name_ru" minlength="2" maxlength="160" required></label>
+                <label>Inglizcha nom<input name="name_en" minlength="2" maxlength="160" required></label>
+                <label>Ikonka<input name="icon" maxlength="8" value="📚"></label>
+                <label class="wide">Tavsif (UZ)<textarea name="description_uz" maxlength="1000" rows="2"></textarea></label>
+                <label class="wide">Tavsif (RU)<textarea name="description_ru" maxlength="1000" rows="2"></textarea></label>
+                <label class="wide">Tavsif (EN)<textarea name="description_en" maxlength="1000" rows="2"></textarea></label>
+                <button class="button primary" type="submit">Kursni saqlash</button><button class="button subtle" type="button" data-cancel-edit hidden>Bekor qilish</button><p class="form-message" data-form-message="course" role="status" aria-live="polite"></p>
+              </form>
+            </details>
+            <details class="create-box"><summary>＋ Ustoz qo‘shish</summary>
+              <form id="teacherForm" class="create-form">
+                <label>Ism-familiya<input name="full_name" maxlength="120" required></label>
+                <label>Fan / yo‘nalish<input name="subject" maxlength="120" required></label>
+                <label>Tajriba<input name="experience" maxlength="80" placeholder="Masalan: 5 yil"></label>
+                <label class="wide">Qisqa ma’lumot<textarea name="bio" maxlength="1000" rows="3"></textarea></label>
+                <button class="button primary" type="submit">Ustozni saqlash</button><button class="button subtle" type="button" data-cancel-edit hidden>Bekor qilish</button><p class="form-message" data-form-message="teacher" role="status" aria-live="polite"></p>
+              </form>
+            </details>
+          </div>
+          <p class="muted small-note">Yangi yozuvlar server tomonda tekshiriladi va SQLite bazasiga saqlanadi. Mavjud Telegram admin menyusi ham ishlashda davom etadi.</p>
+        </section>
+
+
+        <section class="panel view-panel" data-panel="notifications" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">YETKAZISH NAZORATI</p><h2>Telegram xabarlari</h2><p class="muted">Sayt va botdan kelgan ariza xabarlari navbatda, yuborilgan yoki xatolik holatida ko‘rsatiladi. Xato xabarni qayta yuborish mumkin.</p></div><button class="button subtle" id="refreshNotifications" type="button">↻ Yangilash</button></div>
+          <div class="resource-filter-row"><label class="filter-label">Holat<select id="notificationFilter"><option value="">Barcha holatlar</option><option value="pending">Navbatda</option><option value="sent">Yuborildi</option><option value="failed">Xatolik</option></select></label><span class="muted" id="notificationSummary" aria-live="polite"></span></div>
+          <div id="notificationsTable" class="table-wrap"></div>
+        </section>
+        <section class="panel view-panel" data-panel="resources" hidden>
+          <div class="panel-heading"><div><p class="eyebrow">YO‘NALISHGA MOS KONTENT</p><h2>O‘quv materiallari</h2><p class="muted">Kitob, lug‘at, kino va musiqa aniq o‘quv yo‘nalishiga bog‘lanadi. Interaktiv testlar savollar va javoblar bilan Telegram botning o‘zida yaratiladi.</p></div><button class="button subtle" id="refreshResources" type="button">↻ Yangilash</button></div>
+          <div class="resource-filter-row">
+            <label class="filter-label">Turi<select id="resourceFilter"><option value="">Barchasi</option><option value="book">Kitoblar</option><option value="vocabulary">Lug‘atlar</option><option value="movie">Kino va videolar</option><option value="music">Musiqa</option><option value="quiz">Testlar</option></select></label>
+            <span class="muted" id="resourceSummary" aria-live="polite"></span>
+          </div>
+          <div id="resourcesTable" class="table-wrap"></div>
+          <details class="create-box resource-create" data-write-roles="ceo,senior_admin">
+            <summary>＋ Yangi material qo‘shish</summary>
+            <form id="resourceForm" class="create-form">
+              <label>Material turi<select name="category" required><option value="book">📚 Kitob</option><option value="vocabulary">📖 Lug‘at</option><option value="movie">🎬 Kino / video</option><option value="music">🎵 Musiqa</option></select></label>
+              <label>O‘quv yo‘nalishi<select name="course_id" id="resourceCourse" required><option value="">Yo‘nalishni tanlang</option></select></label>
+              <label class="wide">Nomi<input name="title" minlength="2" maxlength="180" required></label>
+              <label class="wide">Qisqa tavsif<textarea name="description" maxlength="1200" rows="2"></textarea></label>
+              <label>Kontent turi<select name="media_type"><option value="text">Matn</option><option value="url">Havola</option></select></label>
+              <label class="wide">Matn yoki https:// havola<textarea name="content" minlength="1" maxlength="10000" rows="4" required></textarea></label>
+              <button class="button primary" type="submit">Materialni saqlash</button><p class="form-message" data-form-message="resource" role="status" aria-live="polite"></p>
+            </form>
+          </details>
+          <p class="muted small-note">Video, audio yoki PDF faylni ustoz Telegram botning Ustoz paneli orqali yuborishi mumkin. Test yaratish uchun botdagi “O‘quv materiallari → Test” jarayonidan foydalaning; test nashr qilingandan keyin <code>/share_test TEST_ID -100…</code> orqali guruhga uzatish mumkin.</p>
+        </section>
+
+        <section class="panel view-panel" data-panel="quiz-results" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading"><div><p class="eyebrow">O‘QUV NATIJALARI</p><h2>Test natijalari</h2><p class="muted">Botda yakunlangan test urinishlari, foydalanuvchi, yo‘nalish va sarflangan vaqt.</p></div><button class="button subtle" id="refreshQuizResults" type="button">↻ Yangilash</button></div>
+          <div id="quizResultsTable" class="table-wrap"></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="audit" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading"><div><p class="eyebrow">XAVFSIZLIK</p><h2>Admin amallari tarixi</h2></div></div>
+          <div id="auditTable" class="table-wrap"></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="groups" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">GURUHLAR VA USTOZLAR</p><h2>Ta’lim guruhlari</h2><p class="muted">Guruhlar, taklif kodlari va ustoz tayinlovlari amaldagi ta’lim bazasidan boshqariladi.</p></div><button class="button subtle" id="refreshGroups" type="button">↻ Yangilash</button></div>
+          <div class="education-admin-forms">
+            <form id="educationGroupForm" class="create-form education-create-card">
+              <h3>Yangi guruh yaratish</h3>
+              <label>Guruh nomi<input name="name" minlength="2" maxlength="100" required></label>
+              <label>Fan / kurs<select name="course_id" id="educationGroupCourse" required><option value="">Kursni tanlang</option></select></label>
+              <label>Jadval<input name="schedule_text" maxlength="240" placeholder="Faqat tasdiqlangan jadval"></label>
+              <button class="button primary" type="submit">Guruh yaratish</button>
+              <p class="form-message" id="educationGroupMessage" role="status" aria-live="polite"></p>
+            </form>
+            <form id="educationTeacherAssignForm" class="create-form education-create-card">
+              <h3>Ustozni guruhga biriktirish</h3>
+              <label>Ustoz Telegram ID<input name="telegram_id" inputmode="numeric" pattern="[1-9][0-9]{4,19}" minlength="5" maxlength="20" required></label>
+              <label>Faol guruh<select name="group_id" id="educationTeacherGroup" required><option value="">Guruhni tanlang</option></select></label>
+              <button class="button primary" type="submit">Ustozni biriktirish</button>
+              <p class="form-message" id="educationTeacherAssignMessage" role="status" aria-live="polite"></p>
+              <small>Ustoz avval Telegram botda <code>/start</code> orqali ro‘yxatdan o‘tgan bo‘lishi kerak.</small>
+            </form>
+          </div>
+          <div class="calendar-admin-list"><div class="panel-heading"><div><h3>Mavjud guruhlar</h3><p class="muted" id="educationGroupSummary" role="status" aria-live="polite"></p></div></div><div class="table-wrap" id="educationGroupsTable"></div></div>
+          <div class="calendar-admin-list"><div class="panel-heading"><div><h3>Ustoz tayinlovlari</h3><p class="muted" id="educationAssignmentSummary" role="status" aria-live="polite"></p></div></div><div class="table-wrap" id="educationAssignmentsTable"></div></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="calendar" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading stack-heading"><div><p class="eyebrow">TASDIQLANGAN SANALAR</p><h2>Akademik kalendar</h2><p class="muted">Dars, imtihon, ta’til, tadbir va muddatlarni Asia/Tashkent vaqtida boshqaring. Faqat e’lon qilingan tadbirlar ommaviy ko‘rinadi.</p></div><button class="button subtle" id="refreshCalendar" type="button">↻ Yangilash</button></div>
+          <form id="calendarEventForm" class="create-form calendar-form">
+            <div class="calendar-fields">
+              <label>Sarlavha — UZ<input name="title_uz" minlength="2" maxlength="180" required></label>
+              <label>Название — RU<input name="title_ru" minlength="2" maxlength="180" required></label>
+              <label>Title — EN<input name="title_en" minlength="2" maxlength="180" required></label>
+              <label>Turi<select name="category"><option value="event">Tadbir</option><option value="lesson">Dars</option><option value="exam">Imtihon</option><option value="holiday">Ta’til</option><option value="deadline">Muddat</option><option value="schedule_change">Jadval o‘zgarishi</option></select></label>
+              <label>Boshlanish sanasi<input type="date" name="start_date" required></label>
+              <label>Boshlanish vaqti<input type="time" name="start_time" required></label>
+              <label>Tugash sanasi<input type="date" name="end_date"></label>
+              <label>Tugash vaqti<input type="time" name="end_time"></label>
+              <label>Joylashuv<input name="location" maxlength="180" placeholder="Ixtiyoriy"></label>
+              <label>Guruh ID<input name="target_group_id" type="number" min="1" step="1" inputmode="numeric" placeholder="Bo‘sh — hammaga ochiq"></label>
+              <label>Holat<select name="status"><option value="draft">Qoralama</option><option value="published">E’lon qilish</option></select></label>
+              <label class="calendar-check"><input name="reminder_24h" type="checkbox" checked> 24 soat oldin eslatma</label>
+            </div>
+            <div class="calendar-description-grid">
+              <label>Izoh — UZ<textarea name="description_uz" rows="2" maxlength="1800"></textarea></label>
+              <label>Описание — RU<textarea name="description_ru" rows="2" maxlength="1800"></textarea></label>
+              <label>Description — EN<textarea name="description_en" rows="2" maxlength="1800"></textarea></label>
+            </div>
+            <div class="form-actions"><button class="button primary" type="submit" id="saveCalendarEvent">Tadbirni saqlash</button><span class="form-message" id="calendarFormMessage" role="status" aria-live="polite"></span></div>
+          </form>
+          <div class="calendar-admin-list"><div class="panel-heading"><div><h3>Mavjud tadbirlar</h3><p class="muted" id="calendarAdminSummary" role="status" aria-live="polite"></p></div></div><div class="table-wrap" id="calendarAdminTable"></div></div>
+        </section>
+
+        <section class="panel view-panel" data-panel="exports" data-role-allow="ceo,senior_admin" hidden>
+          <div class="panel-heading"><div><p class="eyebrow">MA’LUMOTLARNI OLISH</p><h2>Hisobot eksporti</h2><p class="muted">CSV fayllari real bazadagi ma’lumotlardan tayyorlanadi. O‘quvchilarning shaxsiy ma’lumotlari faqat CEO uchun mavjud.</p></div></div>
+          <form id="datasetExportForm" class="resource-filter-row export-form">
+            <label class="filter-label">Ma’lumot turi<select name="dataset" id="exportDataset"><option value="courses">Kurslar</option><option value="teachers">Ustozlar</option><option value="groups">Guruhlar</option><option value="attendance">Davomat</option><option value="homework">Uy vazifalari</option><option value="quiz-results">Test natijalari</option><option value="students" data-role-allow="ceo">O‘quvchilar (CEO)</option></select></label>
+            <label class="filter-label search-filter">Qidirish<input name="q" type="search" id="exportSearch" maxlength="100" placeholder="Ixtiyoriy qidiruv"></label>
+            <button class="button primary" id="downloadDatasetExport" type="submit">CSV yuklab olish ↓</button>
+          </form>
+          <p class="muted small-note" id="exportSummary" role="status" aria-live="polite">Eksport hajmi xavfsizlik uchun 5 000 yozuv bilan cheklangan.</p>
+        </section>
+
+        <section class="panel view-panel" data-panel="accounts" data-role-allow="ceo" hidden>
+          <div class="panel-heading admin-accounts-heading"><div><p class="eyebrow">KIRISH VA RUXSATLAR</p><h2>Administratorlar</h2><p class="muted">Telegram Bot huquqlari va Website Admin hisoblari bitta kanonik administrator yozuviga bog‘langan, lekin alohida faollashadi. Bot taklifini qabul qilish uchun foydalanuvchi o‘z Telegram akkauntidan <code>/start</code> yuboradi. Website Admin kirishi uchun alohida login va parol kerak. Faqat CEO boshqaradi.</p></div><button class="button primary" id="openAdminCreateDialog" type="button" data-role-allow="ceo">＋ Admin qo‘shish</button></div>
+          <div class="calendar-admin-list">
+            <div class="panel-heading"><div><h3>Telegram Bot administratorlari</h3><p class="muted">Bu ro‘yxat Botdagi haqiqiy administrator rolini ko‘rsatadi. Taklifni faqat OWNER qayta yuborishi mumkin.</p></div></div>
+            <div id="telegramAdminsTable" class="table-wrap"><div class="empty-state">Ma’lumot yuklanmoqda…</div></div>
+          </div>
+          <div class="calendar-admin-list">
+            <div class="panel-heading"><div><h3>Website Admin hisoblari</h3><p class="muted">Website login Bot taklifidan mustaqil: alohida parol bilan kirish va Telegram ID bog‘lanishi talab qilinadi.</p></div></div>
+            <div id="accountsTable" class="table-wrap"></div>
+          </div>
+          <dialog class="admin-dialog" id="adminCreateDialog" aria-labelledby="adminCreateTitle">
+            <div class="admin-dialog-head"><div><p class="eyebrow">RUXSATLARNI BOSHQARISH</p><h3 id="adminCreateTitle">Admin qo‘shish</h3></div><button class="dialog-close" id="closeAdminCreateDialog" type="button" aria-label="Dialogni yopish">×</button></div>
+            <p class="muted admin-dialog-intro">Avval Telegram Bot orqali OWNER tasdiqlagan administrator taklifini yarating. Shu ID botda <code>/start</code> yuborganidan so‘ng, bu yerda alohida Website Admin login va parolini bog‘lashingiz mumkin.</p>
+            <form id="accountForm" class="create-form admin-create-form">
+              <div id="accountDetailsStep">
+                <div class="admin-create-grid">
+                  <label>Telegram ID<input name="telegram_id" type="text" inputmode="numeric" autocomplete="off" minlength="5" maxlength="20" pattern="[0-9]{5,20}" aria-describedby="accountTelegramHelp" required><small id="accountTelegramHelp">Faqat raqamlardan iborat Telegram ID.</small></label>
+                  <label>Rol<select id="accountRole" name="role" required><option value="junior_admin">Kichik Admin</option><option value="senior_admin">Katta Admin</option></select></label>
+                  <label>Sayt logini<input name="username" minlength="3" maxlength="40" pattern="[A-Za-z][A-Za-z0-9_.-]{2,39}" autocomplete="off" required></label>
+                  <label>Birlamchi parol<input name="password" type="password" minlength="12" maxlength="256" autocomplete="new-password" required><small>Kamida 12 belgi, kamida bitta harf va bitta raqam.</small></label>
+                </div>
+                <div class="admin-dialog-actions"><button class="button subtle" id="cancelAdminCreateDialog" type="button">Bekor qilish</button><button class="button primary" id="reviewAccountButton" type="button">Tekshirish va davom etish</button></div>
+              </div>
+              <div id="accountReviewStep" hidden>
+                <h4>Ma’lumotlarni tasdiqlang</h4>
+                <dl class="account-review-list"><div><dt>Telegram ID</dt><dd id="reviewAccountTelegram">—</dd></div><div><dt>Rol</dt><dd id="reviewAccountRole">—</dd></div><div><dt>Sayt logini</dt><dd id="reviewAccountUsername">—</dd></div></dl>
+                <p class="muted">Parol ro‘yxatda ko‘rsatilmaydi. Bot taklifini qabul qilish va Website Admin hisobiga kirish alohida jarayonlar. Website hisobini bog‘lashdan oldin targetning Telegram ID’si OWNER tomonidan taklif qilingan bo‘lishi kerak.</p>
+                <div class="admin-dialog-actions"><button class="button subtle" id="backToAccountForm" type="button">Orqaga</button><button class="button primary" id="confirmCreateAccount" type="submit">Adminni yaratish</button></div>
+              </div>
+              <p class="form-message" data-form-message="account" role="status" aria-live="polite"></p>
+            </form>
+          </dialog>
+          <details class="create-box account-create" id="accountPasswordResetBox">
+            <summary>↻ Administrator parolini tiklash</summary>
+            <form id="accountPasswordResetForm" class="create-form">
+              <label>Administrator<select name="username" id="passwordResetUsername" required><option value="">Hisobni tanlang</option></select></label>
+              <label class="wide">Yangi shaxsiy parol<input name="password" type="password" minlength="12" maxlength="256" autocomplete="new-password" required><small>Kamida 12 belgi, kamida bitta harf va bitta raqam. Yangi parolni Telegram orqali yubormang.</small></label>
+              <button class="button primary" type="submit">Parolni yangilash</button><p class="form-message" data-form-message="password-reset" role="status" aria-live="polite"></p>
+            </form>
+            <p class="muted small-note">Tiklash barcha avvalgi Website Admin sessiyalarini bekor qiladi. Bot huquqi alohida boshqariladi; parolni almashtirish Bot taklifini avtomatik bekor qilmaydi.</p>
+          </details>
+        </section>
+        <p class="global-message" id="globalMessage" role="status" aria-live="polite"></p>
+      </section>
+      <footer class="footer"><span>STARTUM · Boshqaruv paneli</span><span>Server tekshiruvlari backend orqali bajariladi</span></footer>
+    </main>
+  </div>
+</body>
+</html>
